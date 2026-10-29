@@ -58,6 +58,6 @@
 
 @media screen and (max-width: 950px) {
     body {
-        padding-bottom: 10px; /* Libera espaço na tela do celular */
+        padding-bottom: 25px; /* Libera espaço na tela do celular */
     }
 }
