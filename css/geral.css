@@ -53,11 +53,11 @@
          display: flex;
          flex-direction: column;
          overflow-x: hidden;
-         padding-bottom: 120px;
+         padding-bottom: 30px;
      }
 
 @media screen and (max-width: 950px) {
     body {
-        padding-bottom: 40px; /* Libera espaço na tela do celular */
+        padding-bottom: 10px; /* Libera espaço na tela do celular */
     }
 }
