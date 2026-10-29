@@ -309,14 +309,11 @@ if (logo) {
     });
 }
 
-// Apanha o h1 diretamente pela classe da div pai
-const tituloCronograma = document.querySelector('.header-title h1');
+// Apanha o h1 pelo ID criado de forma segura
+const tituloCronograma = document.getElementById('titulo-topo');
 
 if (tituloCronograma) {
-    // Coloca a mãozinha para indicar que é clicável (opcional, mas recomendado)
-    tituloCronograma.style.cursor = 'pointer'; 
-
-    // Recarrega a página ao clicar em qualquer parte do H1
+    // Recarrega a página ao clicar no título ou no badge Ao Vivo
     tituloCronograma.addEventListener('click', () => {
         window.location.reload();
     });
