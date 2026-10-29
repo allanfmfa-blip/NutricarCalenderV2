@@ -313,6 +313,9 @@ if (logo) {
 const tituloCronograma = document.querySelector('.header-title h1');
 
 if (tituloCronograma) {
+    // Coloca a mãozinha para indicar que é clicável (opcional, mas recomendado)
+    tituloCronograma.style.cursor = 'pointer'; 
+
     // Recarrega a página ao clicar em qualquer parte do H1
     tituloCronograma.addEventListener('click', () => {
         window.location.reload();
