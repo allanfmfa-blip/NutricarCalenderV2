@@ -111,7 +111,7 @@ header {
     /* 1. Mantém o Header em linha (igual PC), sem empilhar */
     header {
         flex-direction: row !important;
-        padding: 5px 15px !important;
+        padding: 15px 15px !important;
         justify-content: space-between;
         align-items: center;
     }
