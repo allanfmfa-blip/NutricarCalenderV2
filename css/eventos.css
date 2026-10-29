@@ -224,6 +224,7 @@
     /* 4. COLUNA DIREITA (Lista de Eventos) */
     .events-list-container {
         flex: 1 !important; 
+        max-width: 60% !important;
         gap: 8px;
     }
 
