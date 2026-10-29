@@ -300,15 +300,6 @@ if (logo) {
     });
 }
 
-// Vincula o clique da logo para chamar a função de tela cheia
-const logo = document.getElementById('logo-svg');
-
-if (logo) {
-    logo.addEventListener('click', () => {
-        ativarFullscreen();
-    });
-}
-
 // Apanha o h1 pelo ID criado de forma segura
 const tituloCronograma = document.getElementById('titulo-topo');
 
