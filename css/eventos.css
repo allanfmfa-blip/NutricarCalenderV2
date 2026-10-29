@@ -189,81 +189,68 @@
 .segmento-corporativo { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid #a855f7; }
 
 /* =========================================================
-   MOBILE PAISAGEM / TELAS ATÉ 950px - LADO A LADO CRAVADO
+   MOBILE PAISAGEM / TELAS ATÉ 950px - LADO A LADO CRAVADO (IGUAL PC)
 ========================================================= */
 @media screen and (max-width: 950px) {
     
-    /* 1. CABEÇALHO LADO A LADO (Reduzido para caber) */
-    header {
-        padding: 10px 15px !important;
-        flex-direction: row !important; /* Trava lado a lado */
-        gap: 15px;
-    }
-    .logo-svg { height: 50px; }
-    .header-divider { height: 20px; }
-    .header-title h1 { font-size: 2rem; gap: 10px; }
-    .badge-live { font-size: 0.8rem; padding: 2px 6px; }
-    .clock-time { font-size: 2rem; }
-    .clock-date { font-size: 0.9rem; }
-
     /* 2. PAINEL LADO A LADO FORÇADO */
     .dashboard-layout {
-        flex-direction: row !important; /* Força a manter a coluna esquerda e direita */
+        flex-direction: row !important; 
         flex-wrap: nowrap;
-        padding: 10px 15px;
-        gap: 15px; /* Reduz o espaço entre as colunas */
+        padding: 5px 10px;
+        gap: 3%; /* Espaço proporcional reduzido */
     }
 
     /* 3. MENU LATERAL ESQUERDO (Próximo Evento) */
     .sidebar-next-event {
-        flex: 0 0 35% !important; /* Crava a largura em 35% da tela */
-        max-width: 35% !important;
-        padding: 15px;
-        position: sticky; 
-        top: 90px; /* Ajuste para não colar no header */
-        transform: none;
+        flex: 0 0 32% !important; 
+        max-width: 32% !important;
+        padding: 10px;
+        top: 60px; /* Ajuste por causa do header que agora é mais fino */
     }
     
     /* Textos do Menu Esquerdo Menores */
-    .next-label { font-size: 0.65rem; padding: 4px 8px; margin-bottom: 10px; }
-    .sidebar-next-event h2 { font-size: 1.2rem; margin-bottom: 8px; }
-    .sidebar-next-event p { font-size: 0.85rem; margin-bottom: 15px; }
+    .next-label { font-size: 0.55rem; padding: 3px 6px; margin-bottom: 8px; }
+    .sidebar-next-event h2 { font-size: 1rem; margin-bottom: 4px; }
+    .sidebar-next-event p { font-size: 0.75rem; margin-bottom: 10px; }
 
-    /* Contador Espremido */
-    .countdown-container { gap: 5px; margin-top: 10px; }
-    .countdown-box { padding: 5px; border-radius: 8px; }
-    .cd-value { font-size: 1.1rem; }
-    .cd-unit { font-size: 0.6rem; }
+    /* Contador Menor para caber na horizontal */
+    .countdown-container { gap: 4px; margin-top: 5px; }
+    .countdown-box { padding: 4px 2px; border-radius: 6px; }
+    .cd-value { font-size: 0.9rem; }
+    .cd-unit { font-size: 0.5rem; }
 
     /* 4. COLUNA DIREITA (Lista de Eventos) */
     .events-list-container {
-        flex: 1 !important; /* Ocupa o resto (65%) */
-        gap: 12px;
+        flex: 1 !important; 
+        gap: 8px;
     }
 
-    /* Cartão do Evento - Ajuste na Grade */
+    /* Cartão do Evento - O SEGREDO: Voltar a grade para lado a lado */
     .event-card {
-        padding: 12px;
-        gap: 10px;
-        grid-template-columns: min-content 1fr min-content; /* Mantém Foto - Texto - Botões */
+        padding: 8px 10px;
+        gap: 8px;
+        /* Isso aqui força a ficar igual ao PC: Foto na esq, texto meio, botões na dir */
+        grid-template-columns: min-content 1fr min-content !important; 
+        text-align: left !important;
     }
 
-    .event-date { padding: 10px; min-width: 60px; border-radius: 8px; }
-    .event-date .day { font-size: 1.4rem; }
-    .event-date .month { font-size: 0.65rem; margin-top: 2px; }
+    .event-date { padding: 6px; min-width: 55px; border-radius: 6px; }
+    .event-date .day { font-size: 1.1rem; }
+    .event-date .month { font-size: 0.6rem; margin-top: 2px; }
 
-    .event-info h2 { font-size: 1.1rem; margin-bottom: 4px; }
-    .event-info p { font-size: 0.85rem; }
+    .event-info h2 { font-size: 0.9rem; margin-bottom: 2px; }
+    .event-info p { font-size: 0.75rem; line-height: 1.2; }
 
     /* Botões na direita empilhados para economizar largura */
     .event-badges-container {
-        flex-direction: column; /* Coloca um botão em cima do outro */
-        gap: 5px;
+        flex-direction: column !important; 
+        gap: 4px;
     }
     
     .event-badge {
-        width: 100px; /* Trava o tamanho do botão para não vazar */
-        padding: 5px;
-        font-size: 0.6rem;
+        width: 75px; /* Botão pequeno */
+        padding: 4px;
+        font-size: 0.5rem;
     }
 }
