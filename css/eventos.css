@@ -191,7 +191,7 @@
 /* =========================================================
    MOBILE / CELULARES (Até 768px) - LADO A LADO FORÇADO
 ========================================================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 956px) {
     
     /* 1. Mantém o layout principal lado a lado */
     .dashboard-layout {
