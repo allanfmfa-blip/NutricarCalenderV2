@@ -187,3 +187,73 @@
 .badge-outro { background-color: #f073421c; color: var(--accent-outro); border: 1px solid var(--accent-outro); }
 .segmento-residencial { background-color: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid #3b82f6; }
 .segmento-corporativo { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid #a855f7; }
+
+/* =========================================================
+   MOBILE / CELULARES (Até 768px) - LADO A LADO FORÇADO
+========================================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Mantém o layout principal lado a lado */
+    .dashboard-layout {
+        flex-direction: row; /* Força ficar lado a lado */
+        align-items: flex-start;
+        padding: 10px 5px;
+        gap: 10px; /* Reduz o espaço entre as duas colunas */
+    }
+
+    /* 2. Coluna Esquerda (Próximo Evento) - Fica menor para caber */
+    .sidebar-next-event {
+        flex: 0 0 40%; /* Ocupa 40% da tela do celular */
+        max-width: 40%;
+        position: sticky; /* Mantém ele fixo acompanhando a rolagem */
+        top: 20px;
+        transform: none;
+        padding: 10px;
+    }
+
+    /* Ajusta os textos da esquerda para não vazarem do card */
+    .sidebar-next-event h2 { font-size: 1.2rem; margin-bottom: 8px; }
+    .sidebar-next-event p { font-size: 0.8rem; margin-bottom: 15px; }
+    .next-label { font-size: 0.6rem; padding: 4px 8px; margin-bottom: 10px; }
+
+    /* Caixinhas do contador espremidas proporcionalmente */
+    .countdown-container { gap: 4px; }
+    .countdown-box { padding: 6px 2px; }
+    .cd-value { font-size: 1rem; }
+    .cd-unit { font-size: 0.55rem; }
+
+    /* 3. Coluna Direita (Lista de Eventos) */
+    .events-list-container {
+        flex: 1; /* Ocupa os 60% restantes da tela */
+        gap: 10px;
+    }
+
+    /* Ajusta a grade interna do cartão para caber o botão */
+    .event-card {
+        padding: 10px;
+        gap: 8px;
+        /* Reduz o ícone de data, ajusta texto e coloca as tags na direita */
+        grid-template-columns: min-content 1fr min-content; 
+    }
+
+    /* Reduz o calendário do evento */
+    .event-date { min-width: 50px; padding: 8px 5px; }
+    .event-date .day { font-size: 1.3rem; }
+    .event-date .month { font-size: 0.6rem; }
+
+    /* Textos do evento na direita */
+    .event-info h2 { font-size: 1rem; margin-bottom: 4px; }
+    .event-info p { font-size: 0.8rem; }
+
+    /* Organiza as tags (botões) para ficarem menores */
+    .event-badges-container {
+        flex-direction: column; /* Coloca um botão embaixo do outro se tiver mais de um */
+        gap: 5px;
+    }
+    
+    .event-badge {
+        width: auto; /* Tira a largura fixa */
+        padding: 4px 8px;
+        font-size: 0.6rem;
+    }
+}
