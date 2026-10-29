@@ -107,7 +107,7 @@ header {
 /* =========================================================
    MOBILE / CELULARES (Até 768px) - LADO A LADO AJUSTADO
 ========================================================= */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 956px) {
     
     /* 1. O Cabeçalho tem de empilhar para não esmagar a página */
     header {
