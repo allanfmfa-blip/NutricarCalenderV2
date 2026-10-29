@@ -201,12 +201,13 @@
         gap: 3%; /* Espaço proporcional reduzido */
     }
 
-    /* 3. MENU LATERAL ESQUERDO (Próximo Evento) */
+   /* 3. MENU LATERAL ESQUERDO (Próximo Evento) */
     .sidebar-next-event {
         flex: 0 0 32% !important; 
         max-width: 32% !important;
         padding: 10px;
-        top: 60px; /* Ajuste por causa do header que agora é mais fino */
+        top: 75px !important; /* Empurra o card para baixo do header */
+        transform: none !important; /* Remove o efeito que estava puxando o card para cima */
     }
     
     /* Textos do Menu Esquerdo Menores */
