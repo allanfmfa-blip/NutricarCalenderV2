@@ -31,7 +31,7 @@
     <header>
         <div class="header-brand">
             <!-- Logo Oficial configurada como botão de Tela Cheia -->
-            <img src="assets/imgs/logo_horizontal_vf branco outline.png" alt="Logo Nutricar" class="logo-svg" id="logo-fullscreen" style="cursor: pointer;" title="Clique para Tela Cheia">
+            <img src="assets/imgs/logo_horizontal_vf branco outline.png" alt="Logo Nutricar" class="logo-svg" id="logo-svg" style="cursor: pointer;" title="Clique para Tela Cheia">
             <div class="header-divider"></div>
 
             <div class="header-title">
@@ -95,28 +95,5 @@
 
     <!-- Scripts Principais do Site -->
     <script src="JS/scripts.js"></script>
-
-    <!-- Script de Tela Cheia vinculado à Logo -->
-    <script>
-        function ativarFullscreen() {
-            let elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari / iOS */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* Edge antigo */
-                elem.msRequestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            }
-        }
-
-        const logo = document.getElementById('logo-fullscreen');
-        if (logo) {
-            logo.addEventListener('click', () => {
-                ativarFullscreen();
-            });
-        }
-    </script>
 </body>
 </html>
