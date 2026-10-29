@@ -258,3 +258,11 @@
         font-size: 0.5rem;
     }
 }
+
+@media screen and (max-width: 950px) and (min-height: 400px) {
+    
+    
+    .sidebar-next-event {
+      top: 220px !important;
+    }
+}
