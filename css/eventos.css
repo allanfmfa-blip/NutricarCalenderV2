@@ -205,8 +205,8 @@
     .sidebar-next-event {
         flex: 0 0 32% !important; 
         max-width: 32% !important;
-        padding: 10px;
-        top: 75px !important; /* Empurra o card para baixo do header */
+        padding: 20px 10px;
+        top: 150px !important; /* Empurra o card para baixo do header */
         transform: none !important; /* Remove o efeito que estava puxando o card para cima */
     }
     
