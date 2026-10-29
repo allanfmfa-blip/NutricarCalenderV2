@@ -313,7 +313,8 @@ if (logo) {
 const tituloCronograma = document.getElementById('titulo-topo');
 
 if (tituloCronograma) {
-    // Recarrega a página ao clicar no título ou no badge Ao Vivo
+    tituloCronograma.style.cursor = 'pointer';
+
     tituloCronograma.addEventListener('click', () => {
         window.location.reload();
     });
