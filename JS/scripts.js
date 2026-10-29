@@ -299,3 +299,22 @@ if (logo) {
         ativarFullscreen();
     });
 }
+
+// Vincula o clique da logo para chamar a função de tela cheia
+const logo = document.getElementById('logo-svg');
+
+if (logo) {
+    logo.addEventListener('click', () => {
+        ativarFullscreen();
+    });
+}
+
+// Apanha o h1 diretamente pela classe da div pai
+const tituloCronograma = document.querySelector('.header-title h1');
+
+if (tituloCronograma) {
+    // Recarrega a página ao clicar em qualquer parte do H1
+    tituloCronograma.addEventListener('click', () => {
+        window.location.reload();
+    });
+}
