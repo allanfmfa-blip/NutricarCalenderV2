@@ -171,7 +171,7 @@ function autoScrollStep() {
                         requestAnimationFrame(autoScrollStep);
                     }, 1500);
 
-                }, 3000);
+                }, 700);
                 return;
             }
         }
@@ -274,7 +274,7 @@ window.onload = () => {
     setInterval(() => {
         const activeUrl = urlParams.get('sheet') || DEFAULT_SHEETS_URL || localStorage.getItem('sheets_csv_url');
         if (activeUrl) loadSheetsCSV(activeUrl);
-    }, 60 * 5000);
+    }, 60 * 1000);
 };
 
 // Função que ativa o tela cheia
