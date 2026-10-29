@@ -245,7 +245,7 @@
 
     /* Botões na direita empilhados para economizar largura */
     .event-badges-container {
-        flex-direction: column !important; 
+        flex-direction: row !important; 
         gap: 4px;
     }
     
