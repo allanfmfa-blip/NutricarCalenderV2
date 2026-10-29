@@ -3,20 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Isso força o celular a "fingir" que tem uma tela de 1600px de largura e encaixa tudo na tela -->
+    <!-- Tag correta para o celular ler o layout com a escala perfeita -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/eventos.css">
     <link rel="stylesheet" href="css/painel.css">
     <link rel="stylesheet" href="css/geral.css">
-    <link rel="icon" type="image/png" href="assets/imgs/icon.png">
+    
+    <!-- Ícone da Aba do Navegador -->
+    <link rel="icon" type="image/png" href="assets/imgs/icon-final.png">
+    <!-- Manifesto para PWA (Instalação no Windows/Celular) -->
     <link rel="manifest" href="manifest.json">
+    
     <!-- Para iOS (Safari) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
     <!-- Para Android / Padrão -->
     <meta name="mobile-web-app-capable" content="yes">
+    
     <title>Nutricar - Cronograma de Eventos & Retrofits</title>
 </head>
 
@@ -25,8 +30,8 @@
     <!-- CABEÇALHO NUTRICAR -->
     <header>
         <div class="header-brand">
-            <!-- Logo Oficial em SVG Inline -->
-            <img src="assets/imgs/logo_horizontal_vf branco outline.png" alt="#" class="logo-svg" id="logo-svg">
+            <!-- Logo Oficial configurada como botão de Tela Cheia -->
+            <img src="assets/imgs/logo_horizontal_vf branco outline.png" alt="Logo Nutricar" class="logo-svg" id="logo-fullscreen" style="cursor: pointer;" title="Clique para Tela Cheia">
             <div class="header-divider"></div>
 
             <div class="header-title">
@@ -88,7 +93,30 @@
 
     <button class="btn-show-controls" onclick="togglePanel(true)" title="Mostrar Configurações">⚙️</button>
 
+    <!-- Scripts Principais do Site -->
     <script src="JS/scripts.js"></script>
-</body>
 
+    <!-- Script de Tela Cheia vinculado à Logo -->
+    <script>
+        function ativarFullscreen() {
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari / iOS */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* Edge antigo */
+                elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            }
+        }
+
+        const logo = document.getElementById('logo-fullscreen');
+        if (logo) {
+            logo.addEventListener('click', () => {
+                ativarFullscreen();
+            });
+        }
+    </script>
+</body>
 </html>
