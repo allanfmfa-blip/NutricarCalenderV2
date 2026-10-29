@@ -189,71 +189,81 @@
 .segmento-corporativo { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid #a855f7; }
 
 /* =========================================================
-   MOBILE / CELULARES (Até 768px) - LADO A LADO FORÇADO
+   MOBILE PAISAGEM / TELAS ATÉ 950px - LADO A LADO CRAVADO
 ========================================================= */
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 950px) {
     
-    /* 1. Mantém o layout principal lado a lado */
+    /* 1. CABEÇALHO LADO A LADO (Reduzido para caber) */
+    header {
+        padding: 10px 15px !important;
+        flex-direction: row !important; /* Trava lado a lado */
+        gap: 15px;
+    }
+    .logo-svg { height: 50px; }
+    .header-divider { height: 20px; }
+    .header-title h1 { font-size: 2rem; gap: 10px; }
+    .badge-live { font-size: 0.8rem; padding: 2px 6px; }
+    .clock-time { font-size: 2rem; }
+    .clock-date { font-size: 0.9rem; }
+
+    /* 2. PAINEL LADO A LADO FORÇADO */
     .dashboard-layout {
-        flex-direction: row; /* Força ficar lado a lado */
-        align-items: flex-start;
-        padding: 10px 5px;
-        gap: 10px; /* Reduz o espaço entre as duas colunas */
+        flex-direction: row !important; /* Força a manter a coluna esquerda e direita */
+        flex-wrap: nowrap;
+        padding: 10px 15px;
+        gap: 15px; /* Reduz o espaço entre as colunas */
     }
 
-    /* 2. Coluna Esquerda (Próximo Evento) - Fica menor para caber */
+    /* 3. MENU LATERAL ESQUERDO (Próximo Evento) */
     .sidebar-next-event {
-        flex: 0 0 40%; /* Ocupa 40% da tela do celular */
-        max-width: 40%;
-        position: sticky; /* Mantém ele fixo acompanhando a rolagem */
-        top: 20px;
+        flex: 0 0 35% !important; /* Crava a largura em 35% da tela */
+        max-width: 35% !important;
+        padding: 15px;
+        position: sticky; 
+        top: 90px; /* Ajuste para não colar no header */
         transform: none;
-        padding: 10px;
     }
-
-    /* Ajusta os textos da esquerda para não vazarem do card */
+    
+    /* Textos do Menu Esquerdo Menores */
+    .next-label { font-size: 0.65rem; padding: 4px 8px; margin-bottom: 10px; }
     .sidebar-next-event h2 { font-size: 1.2rem; margin-bottom: 8px; }
-    .sidebar-next-event p { font-size: 0.8rem; margin-bottom: 15px; }
-    .next-label { font-size: 0.6rem; padding: 4px 8px; margin-bottom: 10px; }
+    .sidebar-next-event p { font-size: 0.85rem; margin-bottom: 15px; }
 
-    /* Caixinhas do contador espremidas proporcionalmente */
-    .countdown-container { gap: 4px; }
-    .countdown-box { padding: 6px 2px; }
-    .cd-value { font-size: 1rem; }
-    .cd-unit { font-size: 0.55rem; }
+    /* Contador Espremido */
+    .countdown-container { gap: 5px; margin-top: 10px; }
+    .countdown-box { padding: 5px; border-radius: 8px; }
+    .cd-value { font-size: 1.1rem; }
+    .cd-unit { font-size: 0.6rem; }
 
-    /* 3. Coluna Direita (Lista de Eventos) */
+    /* 4. COLUNA DIREITA (Lista de Eventos) */
     .events-list-container {
-        flex: 1; /* Ocupa os 60% restantes da tela */
-        gap: 10px;
+        flex: 1 !important; /* Ocupa o resto (65%) */
+        gap: 12px;
     }
 
-    /* Ajusta a grade interna do cartão para caber o botão */
+    /* Cartão do Evento - Ajuste na Grade */
     .event-card {
-        padding: 10px;
-        gap: 8px;
-        /* Reduz o ícone de data, ajusta texto e coloca as tags na direita */
-        grid-template-columns: min-content 1fr min-content; 
+        padding: 12px;
+        gap: 10px;
+        grid-template-columns: min-content 1fr min-content; /* Mantém Foto - Texto - Botões */
     }
 
-    /* Reduz o calendário do evento */
-    .event-date { min-width: 50px; padding: 8px 5px; }
-    .event-date .day { font-size: 1.3rem; }
-    .event-date .month { font-size: 0.6rem; }
+    .event-date { padding: 10px; min-width: 60px; border-radius: 8px; }
+    .event-date .day { font-size: 1.4rem; }
+    .event-date .month { font-size: 0.65rem; margin-top: 2px; }
 
-    /* Textos do evento na direita */
-    .event-info h2 { font-size: 1rem; margin-bottom: 4px; }
-    .event-info p { font-size: 0.8rem; }
+    .event-info h2 { font-size: 1.1rem; margin-bottom: 4px; }
+    .event-info p { font-size: 0.85rem; }
 
-    /* Organiza as tags (botões) para ficarem menores */
+    /* Botões na direita empilhados para economizar largura */
     .event-badges-container {
-        flex-direction: column; /* Coloca um botão embaixo do outro se tiver mais de um */
+        flex-direction: column; /* Coloca um botão em cima do outro */
         gap: 5px;
     }
     
     .event-badge {
-        width: auto; /* Tira a largura fixa */
-        padding: 4px 8px;
+        width: 100px; /* Trava o tamanho do botão para não vazar */
+        padding: 5px;
         font-size: 0.6rem;
     }
 }
